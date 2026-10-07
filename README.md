@@ -1,5 +1,9 @@
 # D405 Object Modeling
 
+**Piper 视觉抓取系列 · 02 / 物体建模** · [系列总入口与整套运行指南](https://github.com/mingchengli657-art/piper-vision-grasping)
+
+本模块输出米制模型，供 [FoundationPose 跟踪](https://github.com/mingchengli657-art/foundationpose-d405-runtime)使用；在线抓取另需[手眼标定](https://github.com/mingchengli657-art/piper_handeye_calibration)与 [Piper 控制](https://github.com/mingchengli657-art/piper-known-object-control)。
+
 基于 **Intel RealSense D405 + ChArUco 标定板** 的 RGB-D 物体建模工具，从机器人比赛工程中提取。物体与板保持固定，操作者手持相机改变视角；程序根据板恢复相机位姿，将多帧深度融合到统一坐标系，并输出彩色点云及粗略凸包网格。
 
 **流程：RGB-D 同步采集 → ChArUco 位姿与质量筛选 → 多帧融合 → 背景清理 → PLY / OBJ 导出。** 不需要机械臂、手眼外参或转盘反馈，不包含 FoundationPose 推理和抓取控制。
